@@ -724,7 +724,95 @@
       }
 
     }
+/* ======================================================
+   MÉTODOS DE PAGO
+   ====================================================== */
 
+.payment-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.payment-choice {
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+
+.payment-info {
+  display: none;
+
+  max-width: 620px;
+  margin: 30px auto 0;
+  padding: 30px;
+
+  background: var(--blanco);
+
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+
+  box-shadow: var(--sombra);
+
+  text-align: left;
+}
+
+.payment-info h3 {
+  font-size: 1.8rem;
+  color: var(--azul);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.payment-info p {
+  margin: 8px 0;
+  color: var(--texto);
+}
+
+.payment-instructions {
+  margin-top: 22px !important;
+  padding: 16px;
+
+  background: var(--azul-suave);
+
+  border-radius: 8px;
+
+  color: var(--texto-suave) !important;
+
+  line-height: 1.6;
+}
+
+.whatsapp-btn {
+  display: flex;
+  margin-top: 22px;
+
+  background: #25D366;
+
+  box-shadow:
+    0 12px 28px rgba(37, 211, 102, 0.20);
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+@media (max-width: 560px) {
+
+  .payment-buttons {
+    flex-direction: column;
+  }
+
+  .payment-choice {
+    width: 100%;
+  }
+
+  .payment-info {
+    padding: 24px 20px;
+  }
+
+}
   </style>
 </head>
 
@@ -768,9 +856,17 @@
       ========================================
       -->
 
-      <a href="#comprar" class="btn">
-        ADQUIRIR LIBRO
-      </a>
+      <div class="payment-buttons">
+
+  <button onclick="mostrarPago('zelle')" class="btn payment-choice">
+    PAGAR CON ZELLE
+  </button>
+
+  <button onclick="mostrarPago('venezuela')" class="btn payment-choice">
+    BANCO DE VENEZUELA
+  </button>
+
+</div>
 
       <p class="hero-note">
         Disponible en formato digital.
