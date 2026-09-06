@@ -856,17 +856,9 @@
       ========================================
       -->
 
-      <div class="payment-buttons">
-
-  <button onclick="mostrarPago('zelle')" class="btn payment-choice">
-    PAGAR CON ZELLE
-  </button>
-
-  <button onclick="mostrarPago('venezuela')" class="btn payment-choice">
-    BANCO DE VENEZUELA
-  </button>
-
-</div>
+      <a href="#comprar" class="btn">
+        ADQUIRIR LIBRO
+      </a>
 
       <p class="hero-note">
         Disponible en formato digital.
@@ -1265,8 +1257,9 @@
         </summary>
 
         <p>
-          La modalidad exacta de entrega será informada al momento
-          de habilitar la compra.
+          Después de realizar el pago, envía el comprobante por WhatsApp
+          junto con el correo donde deseas recibir el e-book. Una vez
+          verificado el pago, recibirás el libro en ese correo.
         </p>
 
       </details>
@@ -1317,7 +1310,7 @@
     -->
 
     <div class="price">
-      Próximamente disponible
+      USD 7 · Bs. 10.000
     </div>
 
 
@@ -1330,9 +1323,65 @@
     ========================================
     -->
 
-    <a href="#" class="btn">
-      ADQUIRIR LIBRO
-    </a>
+    <div class="payment-buttons">
+
+      <button onclick="mostrarPago('zelle')" class="btn payment-choice">
+        PAGAR CON ZELLE
+      </button>
+
+      <button onclick="mostrarPago('venezuela')" class="btn payment-choice">
+        PAGAR CON BANCO DE VENEZUELA
+      </button>
+
+    </div>
+
+    <!-- DATOS ZELLE -->
+    <div id="zelle" class="payment-info">
+
+      <h3>Pago con Zelle</h3>
+
+      <p><strong>Monto:</strong> USD 7</p>
+      <p><strong>Correo Zelle:</strong> jesusricardolozanoh@gmail.com</p>
+
+      <p class="payment-instructions">
+        Realiza el pago y luego envíanos el comprobante por WhatsApp.
+        Indica también el correo donde deseas recibir tu e-book.
+      </p>
+
+      <a
+        href="https://wa.me/584149754932?text=Hola%2C%20acabo%20de%20realizar%20el%20pago%20de%20USD%207%20por%20Zelle%20para%20el%20e-book%20Sanando%20el%20Alma%20en%20la%20B%C3%BAsqueda%20de%20la%20Fertilidad.%20Adjunto%20mi%20comprobante.%20Mi%20correo%20para%20recibir%20el%20e-book%20es%3A%20"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn whatsapp-btn">
+        ENVIAR COMPROBANTE POR WHATSAPP
+      </a>
+
+    </div>
+
+    <!-- BANCO DE VENEZUELA -->
+    <div id="venezuela" class="payment-info">
+
+      <h3>Banco de Venezuela</h3>
+
+      <p><strong>Monto:</strong> Bs. 10.000</p>
+      <p><strong>Documento:</strong> 8046416</p>
+      <p><strong>Teléfono:</strong> 04149754932</p>
+      <p><strong>Banco:</strong> Banco de Venezuela</p>
+
+      <p class="payment-instructions">
+        Realiza el pago y luego envíanos el comprobante por WhatsApp.
+        Indica también el correo donde deseas recibir tu e-book.
+      </p>
+
+      <a
+        href="https://wa.me/584149754932?text=Hola%2C%20acabo%20de%20realizar%20el%20pago%20de%20Bs.%2010.000%20por%20Banco%20de%20Venezuela%20para%20el%20e-book%20Sanando%20el%20Alma%20en%20la%20B%C3%BAsqueda%20de%20la%20Fertilidad.%20Adjunto%20mi%20comprobante.%20Mi%20correo%20para%20recibir%20el%20e-book%20es%3A%20"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn whatsapp-btn">
+        ENVIAR COMPROBANTE POR WHATSAPP
+      </a>
+
+    </div>
 
   </div>
 
@@ -1350,6 +1399,25 @@
 
 </footer>
 
+
+
+<script>
+function mostrarPago(metodo) {
+  const zelle = document.getElementById("zelle");
+  const venezuela = document.getElementById("venezuela");
+
+  zelle.style.display = "none";
+  venezuela.style.display = "none";
+
+  const seleccionado = document.getElementById(metodo);
+  seleccionado.style.display = "block";
+
+  seleccionado.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+}
+</script>
 
 </body>
 </html>
